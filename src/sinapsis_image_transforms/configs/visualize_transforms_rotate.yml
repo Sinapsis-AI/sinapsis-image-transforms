@@ -1,0 +1,53 @@
+agent:
+  name: visualize_transforms_rotate
+  description: agent that performs rotate transforms
+
+templates:
+  - template_name: InputTemplate
+    class_name: InputTemplate
+    template_input: null
+    attributes: { }
+
+  - template_name: Rotate
+    class_name: RotateWrapper
+    template_input: InputTemplate
+    attributes:
+      rotate_init:
+        limit: [-45, 45]
+        interpolation: 1
+        border_mode: 4
+        value: [0, 0, 0]
+        mask_value: null
+        rotate_method: "largest_box"
+        crop_border: false
+        fill_value: 0
+        mask_fill_value: 0
+        deterministic: true
+        p: 1.0
+
+  - template_name: RandomRotate90
+    class_name: RandomRotate90Wrapper
+    template_input: Rotate
+    attributes:
+      randomrotate90_init:
+        fill_value: 0
+        mask_fill_value: 0
+        deterministic: true
+        interpolation: 1
+        p: 1.0
+
+  - template_name: SafeRotate
+    class_name: SafeRotateWrapper
+    template_input: RandomRotate90
+    attributes:
+      saferotate_init:
+        limit: [-30, 30]
+        interpolation: 1
+        border_mode: 4
+        value: [0, 0, 0]
+        mask_value: null
+        rotate_method: "largest_box"
+        fill_value: 0
+        mask_fill_value: 0
+        deterministic: true
+        p: 1.0

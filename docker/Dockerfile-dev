@@ -1,0 +1,9 @@
+FROM sinapsis:base
+
+COPY . /app/
+WORKDIR /app
+RUN uv build
+RUN uv sync --frozen  --all-extras
+
+
+RUN uv pip install /app/dist/sinapsis_*none-any.whl

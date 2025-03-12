@@ -1,0 +1,51 @@
+[project]
+description = "Package to handle image transformations"
+authors = [{ name = "SinapsisAI", email = "dev@sinapsis-ai.com" }]
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+name = "sinapsis-image-transforms"
+version = "0.1.0"
+dependencies = [
+    "albumentations>=2.0.5",
+    "sinapsis>=0.1.1",
+]
+
+
+[project.optional-dependencies]
+webapp-gradio = [
+    "gradio>=5.1.0",
+]
+dev = [
+    "ruff>=0.8.3",
+    "pre-commit>=4.0.1",
+]
+all = ["sinapsis-image-transforms[webapp-gradio]","sinapsis-image-transforms[dev]"]
+
+[tool.ruff]
+lint.select = [
+    "ARG",  # Unused arguments
+    "ANN",
+    "BLE",  # Blind except
+    "C4",   # Comprehensions
+    "E",    # Errors
+    "F",    # Pyflakes
+    "FIX",  # "FIXME"-comments
+    "FLY",  # F-strings
+    "I",    # Isort
+    "PERF", # Unnecessary performance costs
+    "PIE",  # Unnecessary code
+    "RUF",  # Ruff
+    "RSE",  # Raise
+    "SIM",  # Code simplification
+    "SLOT", # __slots__
+    "T10",  # Debugger
+    "T20",  # Print
+    "TD",   # "TODO"-comments
+    "TID",  # Tidy imports
+]
+lint.ignore = ['ANN401']
+line-length = 120
+show-fixes = true
+[tool.setuptools]
+license-files = []

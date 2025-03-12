@@ -1,0 +1,30 @@
+agent:
+  name: visualize_transforms_resize
+  description: agent that performs longest max size, pad if needed transforms and saving the resulting image in a given folder
+templates:
+  - template_name: InputTemplate
+    class_name: InputTemplate
+    template_input: null
+    attributes: {}
+
+
+  - template_name: LongestMaxSize
+    class_name: LongestMaxSizeWrapper
+    template_input: InputTemplate
+    attributes:
+      longestmaxsize_init:
+        max_size: 800
+        interpolation: 0
+
+
+  - template_name: PadIfNeeded
+    class_name: PadIfNeededWrapper
+    template_input: LongestMaxSize
+    attributes:
+      padifneeded_init:
+        min_height: 1024
+        min_width: 800
+        border_mode: 0
+        value: [255, 255, 255]
+        interpolation: 1
+
