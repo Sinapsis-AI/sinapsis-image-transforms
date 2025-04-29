@@ -1,0 +1,57 @@
+[project]
+name = "sinapsis-albumentations"
+version = "0.1.0"
+description = "Templates to perform image transformations using the albumentations library."
+authors = [
+    { name = "SinapsisAI", email = "dev@sinapsis-ai.com" }
+]
+readme = "README.md"
+license-files = ["LICENSE"]
+requires-python = ">=3.10.12"
+dependencies = [
+    "albumentations>=2.0.5",
+    "sinapsis>=0.1.1",
+]
+
+[tool.uv.sources]
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[[tool.uv.index]]
+url = "https://pypi.sinapsis.tech/"
+
+
+[tool.ruff]
+lint.select = [
+    "ARG",
+    "ANN",
+    "BLE",
+    "C4",
+    "E",
+    "F",
+    "FIX",
+    "FLY",
+    "I",
+    "PERF",
+    "PIE",
+    "RUF",
+    "RSE",
+    "SIM",
+    "SLOT",
+    "T10",
+    "T20",
+    "TD",
+    "TID",
+]
+lint.ignore = ['ANN401']
+line-length = 120
+show-fixes = true
+
+
+
+[project.urls]
+Homepage = "https://sinapsis.tech"
+Documentation = "https://docs.sinapsis.tech/docs"
+Tutorials = "https://docs.sinapsis.tech/tutorials"
+Repository = "https://github.com/Sinapsis-AI/sinapsis-image-transforms.git"

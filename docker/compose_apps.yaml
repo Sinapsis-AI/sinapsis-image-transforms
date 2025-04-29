@@ -1,18 +1,18 @@
 services:
 
-  sinapsis-image-transforms-inference:
+  sinapsis-albumentations-inference:
     extends:
       service: sinapsis-image-transforms
       file: compose.yaml
-    container_name: sinapsis-image-transforms-inference
+    container_name: sinapsis-albumentations-inference
     volumes:
-      - "../src/sinapsis_image_transforms/configs/:/app/src/sinapsis_image_transforms/configs/"
+      - "../packages/sinapsis_albumentations/src/sinapsis_albumentations/configs/:/app/src/sinapsis_albumentations/configs/"
       - "../webapps/:/app/webapps"
-    command: /app/.venv/bin/sinapsis run src/sinapsis_image_transforms/configs/visualize_transforms_with_anns_from_dir.yml
+    command: /app/.venv/bin/sinapsis run src/sinapsis_albumentations/configs/visualize_transforms_with_anns_from_dir.yml
 
-  sinapsis-image-transforms-gradio:
+  sinapsis-albumentations-gradio:
     extends:
       service: sinapsis-image-transforms
       file: compose.yaml
-    container_name: sinapsis-image-transforms-inference-gradio
-    command: python3 webapps/gradio_image_transform_visualizer.py
+    container_name: sinapsis-albumentations-inference-gradio
+    command: python3 webapps/gradio_albumentations_transforms_visualizer.py

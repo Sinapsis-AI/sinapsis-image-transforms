@@ -4,7 +4,7 @@ from typing import Callable
 
 from sinapsis.templates import _import_template_package
 
-_root_lib_path = "sinapsis_image_transforms.templates"
+_root_lib_path = "sinapsis_albumentations.templates"
 
 _template_lookup: dict = {}
 

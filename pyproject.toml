@@ -2,12 +2,11 @@
 description = "Package to handle image transformations"
 authors = [{ name = "SinapsisAI", email = "dev@sinapsis-ai.com" }]
 readme = "README.md"
-license = { file = "LICENSE" }
+license-files = ["LICENSE"]
 requires-python = ">=3.10"
 name = "sinapsis-image-transforms"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
-    "albumentations>=2.0.5",
     "sinapsis>=0.1.1",
 ]
 
@@ -20,32 +19,58 @@ dev = [
     "ruff>=0.8.3",
     "pre-commit>=4.0.1",
 ]
-all = ["sinapsis-image-transforms[webapp-gradio]","sinapsis-image-transforms[dev]"]
+all = [
+    "sinapsis-image-transforms[webapp-gradio]",
+    "sinapsis-image-transforms[dev]",
+    "sinapsis-albumentations",
+]
+sinapsis-albumentations = [
+    "sinapsis-albumentations",
+]
+
+
+[tool.uv.workspace]
+members = ["packages/*"]
+exclude = ["packages/*.egg-info"]
+
+[tool.setuptools]
+packages = { find = { where = ["packages"] } }
+
+[[tool.uv.index]]
+url = "https://pypi.sinapsis.tech/"
+
+[tool.uv.sources]
+sinapsis-albumentations = { workspace = true }
 
 [tool.ruff]
 lint.select = [
-    "ARG",  # Unused arguments
+    "ARG",
     "ANN",
-    "BLE",  # Blind except
-    "C4",   # Comprehensions
-    "E",    # Errors
-    "F",    # Pyflakes
-    "FIX",  # "FIXME"-comments
-    "FLY",  # F-strings
-    "I",    # Isort
-    "PERF", # Unnecessary performance costs
-    "PIE",  # Unnecessary code
-    "RUF",  # Ruff
-    "RSE",  # Raise
-    "SIM",  # Code simplification
-    "SLOT", # __slots__
-    "T10",  # Debugger
-    "T20",  # Print
-    "TD",   # "TODO"-comments
-    "TID",  # Tidy imports
+    "BLE",
+    "C4",
+    "E",
+    "F",
+    "FIX",
+    "FLY",
+    "I",
+    "PERF",
+    "PIE",
+    "RUF",
+    "RSE",
+    "SIM",
+    "SLOT",
+    "T10",
+    "T20",
+    "TD",
+    "TID",
 ]
 lint.ignore = ['ANN401']
 line-length = 120
 show-fixes = true
-[tool.setuptools]
-license-files = []
+
+
+[project.urls]
+Homepage = "https://sinapsis.tech"
+Documentation = "https://docs.sinapsis.tech/docs"
+Tutorials = "https://docs.sinapsis.tech/tutorials"
+Repository = "https://github.com/Sinapsis-AI/sinapsis-image-transforms.git"
