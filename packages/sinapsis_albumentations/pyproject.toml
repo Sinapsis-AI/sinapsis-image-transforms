@@ -1,13 +1,13 @@
 [project]
 name = "sinapsis-albumentations"
-version = "0.1.0"
+version = "0.1.1"
 description = "Templates to perform image transformations using the albumentations library."
 authors = [
     { name = "SinapsisAI", email = "dev@sinapsis-ai.com" }
 ]
 readme = "README.md"
 license-files = ["LICENSE"]
-requires-python = ">=3.10.12"
+requires-python = ">=3.10"
 dependencies = [
     "albumentations>=2.0.5",
     "sinapsis>=0.1.1",
