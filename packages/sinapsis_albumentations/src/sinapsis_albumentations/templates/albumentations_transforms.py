@@ -19,7 +19,12 @@ from sinapsis_core.data_containers.annotations import (
 )
 from sinapsis_core.data_containers.data_packet import DataContainer, ImagePacket
 from sinapsis_core.template_base import Template
-from sinapsis_core.template_base.base_models import TemplateAttributes, TemplateAttributeType
+from sinapsis_core.template_base.base_models import (
+    OutputTypes,
+    TemplateAttributes,
+    TemplateAttributeType,
+    UIPropertiesMetadata,
+)
 from sinapsis_core.template_base.dynamic_template import (
     BaseDynamicWrapperTemplate,
     WrapperEntryConfig,
@@ -89,7 +94,7 @@ class AlbumentationAugmentationsTransforms(BaseDynamicWrapperTemplate):
           p: 1.0
     """
 
-    CATEGORY = "Albumentations"
+    UIProperties = UIPropertiesMetadata(category="HuggingFace", output_type=OutputTypes.IMAGE)
     WrapperEntry = WrapperEntryConfig(wrapped_object=transforms)
 
     class AttributesBaseModel(TemplateAttributes):

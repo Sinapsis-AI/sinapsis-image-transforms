@@ -1,11 +1,12 @@
 [project]
+name = "sinapsis-image-transforms"
+version = "0.2.1"
 description = "Package to handle image transformations"
-authors = [{ name = "SinapsisAI", email = "dev@sinapsis-ai.com" }]
+authors = [{ name = "SinapsisAI", email = "dev@sinapsis.tech" }]
 readme = "README.md"
 license-files = ["LICENSE"]
 requires-python = ">=3.10"
-name = "sinapsis-image-transforms"
-version = "0.2.0"
+
 dependencies = [
     "sinapsis>=0.1.1",
 ]
@@ -24,10 +25,6 @@ all = [
     "sinapsis-image-transforms[dev]",
     "sinapsis-albumentations",
 ]
-sinapsis-albumentations = [
-    "sinapsis-albumentations",
-]
-
 
 [tool.uv.workspace]
 members = ["packages/*"]
