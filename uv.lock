@@ -1303,7 +1303,7 @@ wheels = [
 
 [[package]]
 name = "sinapsis-image-transforms"
-version = "0.2.0"
+version = "0.2.1"
 source = { virtual = "." }
 dependencies = [
     { name = "sinapsis" },
@@ -1320,9 +1320,6 @@ dev = [
     { name = "pre-commit" },
     { name = "ruff" },
 ]
-sinapsis-albumentations = [
-    { name = "sinapsis-albumentations" },
-]
 webapp-gradio = [
     { name = "gradio" },
 ]
@@ -1334,7 +1331,6 @@ requires-dist = [
     { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.8.3" },
     { name = "sinapsis", specifier = ">=0.1.1" },
     { name = "sinapsis-albumentations", marker = "extra == 'all'", editable = "packages/sinapsis_albumentations" },
-    { name = "sinapsis-albumentations", marker = "extra == 'sinapsis-albumentations'", editable = "packages/sinapsis_albumentations" },
     { name = "sinapsis-image-transforms", extras = ["dev"], marker = "extra == 'all'" },
     { name = "sinapsis-image-transforms", extras = ["webapp-gradio"], marker = "extra == 'all'" },
 ]
