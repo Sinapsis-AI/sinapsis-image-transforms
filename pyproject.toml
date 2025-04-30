@@ -1,6 +1,6 @@
 [project]
 name = "sinapsis-image-transforms"
-version = "0.2.1"
+version = "0.2.2"
 description = "Package to handle image transformations"
 authors = [{ name = "SinapsisAI", email = "dev@sinapsis.tech" }]
 readme = "README.md"
