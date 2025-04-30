@@ -1279,7 +1279,7 @@ webapp = [
 
 [[package]]
 name = "sinapsis-albumentations"
-version = "0.1.1"
+version = "0.1.2"
 source = { editable = "packages/sinapsis_albumentations" }
 dependencies = [
     { name = "albumentations" },
