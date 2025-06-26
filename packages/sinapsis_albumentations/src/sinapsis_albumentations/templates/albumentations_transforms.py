@@ -94,7 +94,7 @@ class AlbumentationAugmentationsTransforms(BaseDynamicWrapperTemplate):
           p: 1.0
     """
 
-    UIProperties = UIPropertiesMetadata(category="HuggingFace", output_type=OutputTypes.IMAGE)
+    UIProperties = UIPropertiesMetadata(category="Albumentations", output_type=OutputTypes.IMAGE)
     WrapperEntry = WrapperEntryConfig(wrapped_object=transforms)
 
     class AttributesBaseModel(TemplateAttributes):
