@@ -33,6 +33,8 @@ from sinapsis_core.template_base.dynamic_template_factory import make_dynamic_te
 from sinapsis_core.utils.env_var_keys import SINAPSIS_BUILD_DOCS
 from sinapsis_core.utils.logging_utils import sinapsis_logger as logging
 
+from sinapsis_albumentations.helpers.tags import Tags
+
 
 @dataclass(frozen=True)
 class AlbumentationsComposeKeys:
@@ -94,7 +96,11 @@ class AlbumentationAugmentationsTransforms(BaseDynamicWrapperTemplate):
           p: 1.0
     """
 
-    UIProperties = UIPropertiesMetadata(category="Albumentations", output_type=OutputTypes.IMAGE)
+    UIProperties = UIPropertiesMetadata(
+        category="Albumentations",
+        output_type=OutputTypes.IMAGE,
+        tags=[Tags.ALBUMENTATIONS, Tags.AUGMENTATIONS, Tags.DYNAMIC, Tags.IMAGE, Tags.IMAGE_TRANSFORMS],
+    )
     WrapperEntry = WrapperEntryConfig(wrapped_object=transforms)
 
     class AttributesBaseModel(TemplateAttributes):

@@ -1,6 +1,6 @@
 [project]
 name = "sinapsis-albumentations"
-version = "0.1.5"
+version = "0.1.6"
 description = "Templates to perform image transformations using the albumentations library."
 authors = [
     { name = "SinapsisAI", email = "dev@sinapsis-ai.com" }
